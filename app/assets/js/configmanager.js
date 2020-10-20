@@ -56,7 +56,7 @@ exports.getAbsoluteMaxRAM = function(){
 
 function resolveMaxRAM(){
     const mem = os.totalmem()
-    return mem >= 8000000000 ? '4G' : (mem >= 6000000000 ? '3G' : '2G')
+    return mem >= 16000000000 ? '8G' :(mem >= 8000000000 ? '4G' : (mem >= 6000000000 ? '3G' : '2G'))
 }
 
 function resolveMinRAM(){
