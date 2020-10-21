@@ -175,7 +175,7 @@ class Module {
     }
 
     _resolveArtifactPath(artifactPath, serverid){
-        const pth = artifactPath == null ? path.join(...this.getGroup().split('.'), this.getID(), this.getVersion(), `${this.getID()}-${this.getVersion()}${this.artifactClassifier != undefined ? `-${this.artifactClassifier}` : ''}.${this.getExtension()}`) : artifactPath
+        const pth = artifactPath == null ? path.join(this.getID(), this.getVersion(), `${this.getID()}-${this.getVersion()}${this.artifactClassifier != undefined ? `-${this.artifactClassifier}` : ''}.${this.getExtension()}`) : artifactPath
 
         switch (this.type){
             case exports.Types.Library:
@@ -185,7 +185,7 @@ class Module {
                 break
             case exports.Types.ForgeMod:
             case exports.Types.LiteMod:
-                this.artifact.path = path.join(ConfigManager.getCommonDirectory(), 'modstore', pth)
+                this.artifact.path = path.join(ConfigManager.getInstanceDirectory(), serverid, 'mods', pth)
                 break
             case exports.Types.VersionManifest:
                 this.artifact.path = path.join(ConfigManager.getCommonDirectory(), 'versions', this.getIdentifier(), `${this.getIdentifier()}.json`)

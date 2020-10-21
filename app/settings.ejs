@@ -206,7 +206,18 @@
                         <button class="settingsFileSelButton" id="settingsJavaExecSel" dialogTitle="Select Java Executable" dialogDirectory="false">Choose File</button>
                     </div>
                 </div>
-                <div class="settingsFileSelDesc">Info Skal indsættes (valg af java Eksekverbar fil).</div>
+                <div class="settingsFileSelDesc">Java Eksekverbar filen er valideret før spil start. <strong>Kræver Java 8 x64.</strong><br>Stien skulle ende med <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>.<br>
+                    <br><strong>Step 1:</strong><br>
+                    Klik på "Vælg fil"<br>
+                    <strong>Step 2:</strong><br>
+                    Sæt dette ind i filplacerings linjen "C:\Program Files\Java\"<br>
+                    <strong>Step 3:</strong><br>
+                    Gå ind i den mappe der har det højest mulige tal til sidst<br>
+                    F.eks. lægger der disse to mapper "jre1.8.0_203" & "jre1.8.0_230" så skal du gå ind i jre1.8.0_230 da den er højest.<br>
+                    <strong>Step 4:</strong><br>
+                    Gå ind i mappen der hedder "Bin"<br>
+                    <strong>Step: 5:</strong><br>
+                    Find filen javaw.exe og åben den</div>
             </div>
             <div id="settingsJVMOptsContainer">
                 <div id="settingsJVMOptsTitle">Extra JVM Indstillinger</div>
